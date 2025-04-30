@@ -1,6 +1,18 @@
 package com.pl.NextTask.NextTask.domain;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Categoria {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private String nome;
     private String cor;
