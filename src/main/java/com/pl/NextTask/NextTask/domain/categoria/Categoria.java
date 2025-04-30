@@ -1,5 +1,7 @@
-package com.pl.NextTask.NextTask.domain;
+package com.pl.NextTask.NextTask.domain.categoria;
 
+import com.pl.NextTask.NextTask.domain.tarefa.Tarefa;
+import com.pl.NextTask.NextTask.domain.usuario.Usuario;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;

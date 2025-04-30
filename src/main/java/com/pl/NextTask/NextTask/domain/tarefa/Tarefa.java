@@ -1,7 +1,6 @@
-package com.pl.NextTask.NextTask.domain;
+package com.pl.NextTask.NextTask.domain.tarefa;
 
-import com.pl.NextTask.NextTask.domain.enums.Prioridade;
-import com.pl.NextTask.NextTask.domain.enums.Status;
+import com.pl.NextTask.NextTask.domain.usuario.Usuario;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;

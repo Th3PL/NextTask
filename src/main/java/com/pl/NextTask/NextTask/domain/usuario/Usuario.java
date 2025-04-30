@@ -1,7 +1,6 @@
-package com.pl.NextTask.NextTask.domain;
+package com.pl.NextTask.NextTask.domain.usuario;
 
 
-import com.pl.NextTask.NextTask.domain.enums.Role;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
