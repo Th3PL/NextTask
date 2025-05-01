@@ -1,12 +1,14 @@
 package com.pl.NextTask.NextTask.domain.usuario;
 
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.pl.NextTask.NextTask.domain.categoria.Categoria;
+import com.pl.NextTask.NextTask.domain.tarefa.Tarefa;
+import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,7 +17,7 @@ import lombok.*;
 public class Usuario {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
@@ -23,4 +25,12 @@ public class Usuario {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Tarefa> tarefas;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Categoria> categorias;
+
+
 }

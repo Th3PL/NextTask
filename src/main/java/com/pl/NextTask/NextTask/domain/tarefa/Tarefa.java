@@ -1,14 +1,15 @@
 package com.pl.NextTask.NextTask.domain.tarefa;
 
+import com.pl.NextTask.NextTask.domain.categoria.Categoria;
 import com.pl.NextTask.NextTask.domain.usuario.Usuario;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 public class Tarefa {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private String descricao;
@@ -28,8 +29,16 @@ public class Tarefa {
 
     @Enumerated(EnumType.STRING)
     private Prioridade prioridade;
+
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private Usuario usuario;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Categoria categoria;
 
 }
 
